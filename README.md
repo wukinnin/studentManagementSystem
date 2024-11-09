@@ -1,66 +1,84 @@
-# 0 -- initial setup
+# You will need
 
-Start fresh laravel project
+- Laravel
+- Xampp
+- Composer
+- NPM
+- Git
+
+Recommended but optional:
+- VS Code
+
+---
+
+# Initial setup and tutorial
+
+1. Configure php.ini
 ```
-composer create-project laravel/laravel studentManagementSystem --ignore-platform-req=ext-fileinfo
+php.ini
+```
+on php.ini file, uncomment `;extension=fileinfo` to `extension=fileinfo`, and restart xampp servers (apache)
+
+2. Start fresh laravel project
+```
+composer create-project laravel/laravel studentManagementSystem
 ```
 
-Initialize git
+3. Initialize git
 ```
 git init
 git add .
-git commit -m "[message]"
+git commit -m "init"
 ```
 
-add git repo to github
+add git repo to github -- assuming the repository already exists
 ```
-git remote add origin [link.git]
+git remote add origin [link].git
 git branch -M main
 git push -u origin main
 ```
 
-
-
 ---
+# Cloned repo setup on a fresh git clone
 
-# 0.5 -- if starting from a clone 
-*(2 is variable)*
-
-0.
-```
-php.ini
-# uncomment ;extension=fileinfo
-# to extension=fileinfo
-```
-
-1.
-```
-cp .env.example .env
-php artisan key:generate
-```
-
-2.
+1. install composer on vendor
 ```
 composer install
-composer require laravel/breeze --dev
-php artisan breeze:install
-php artisan migrate
-npm install
-npm build install
 ```
 
-3. .env file
+2. copy to new .env file
+```
+cp .env.example .env
+```
+
+3. modify .env file
+Change DB_DATABASE to what is in `127.0.0.1/phpmyadmin`
+If not, create new database with the appropriate name, in my case: `studentManagementSystem`
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_DATABASE=studentManagementSystem
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
-4.
+4. generate key
+
 ```
+php artisan key:generate
+```
+
+5. migrate tables
+```
+php artisan migrate
+```
+
+6. install breeze
+**Note: Installed livewire with dark mode support using Pest**
+```
+composer require laravel/breeze --dev
+php artisan breeze:install
 php artisan migrate
 ```
 
