@@ -29,7 +29,9 @@ git commit -m "init"
 ```
 
 add git repo to github -- assuming the repository already exists
+
 replace [link] with a valid github repo link e.g. `https://github.com/[username]/[repoName]` and append `.git` at the end
+
 ```
 git remote add origin [link].git
 git branch -M main
