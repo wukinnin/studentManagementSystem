@@ -52,8 +52,8 @@ cp .env.example .env
 ```
 
 3. modify .env file
-Change DB_DATABASE to what is in `127.0.0.1/phpmyadmin`
-If not, create new database with the appropriate name, in my case: `studentManagementSystem`
+Change DB_DATABASE if needed.
+If new, create new database with matching name in `127.0.0.1/phpmyadmin`
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
