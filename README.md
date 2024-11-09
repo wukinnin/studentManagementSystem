@@ -6,9 +6,6 @@
 - NPM
 - Git
 
-Recommended but optional:
-- VS Code
-
 ---
 
 # Initial setup and tutorial
@@ -32,6 +29,7 @@ git commit -m "init"
 ```
 
 add git repo to github -- assuming the repository already exists
+replace [link] with a valid github repo link e.g. `https://github.com/[username]/[repoName]` and append `.git` at the end
 ```
 git remote add origin [link].git
 git branch -M main
@@ -52,6 +50,7 @@ cp .env.example .env
 ```
 
 3. modify .env file
+
 Change DB_DATABASE if needed.
 If new, create new database with matching name in `127.0.0.1/phpmyadmin`
 ```
@@ -75,7 +74,8 @@ php artisan migrate
 ```
 
 6. install breeze
-**Note: Installed livewire with dark mode support using Pest**
+   
+Note: Installed livewire with dark mode support using Pest
 ```
 composer require laravel/breeze --dev
 php artisan breeze:install
