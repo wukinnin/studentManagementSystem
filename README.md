@@ -19,6 +19,7 @@ on php.ini file, uncomment `;extension=fileinfo` to `extension=fileinfo`, and re
 2. Start fresh laravel project
 ```
 composer create-project laravel/laravel studentManagementSystem
+cd studentManagementSystem
 ```
 
 3. Initialize git
@@ -30,10 +31,10 @@ git commit -m "init"
 
 add git repo to github -- assuming the repository already exists
 
-replace [link] with a valid github repo link e.g. `https://github.com/[username]/[repoName]` and append `.git` at the end
+replace [link] with a valid github repo link e.g. `https://github.com/[username]/[repoName]`
 
 ```
-git remote add origin [link].git
+git remote add origin [link]
 git branch -M main
 git push -u origin main
 ```
