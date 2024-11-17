@@ -77,8 +77,10 @@ php artisan migrate
 ```
 
 6. install breeze
-   
-Note: Installed livewire with dark mode support using Pest
+
+Install both livewire with pest
+and blade components
+
 ```
 composer require laravel/breeze --dev
 php artisan breeze:install
