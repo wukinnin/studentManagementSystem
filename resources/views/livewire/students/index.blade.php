@@ -1,3 +1,4 @@
+
 <div class="py-4">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
@@ -27,11 +28,31 @@
                               <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700" id="paginated-students">
                                 <thead>
                                   <tr>
-                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start">ID</th>
-                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start">Name</th>
-                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start">Email</th>
-                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start">Class</th>
-                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start">Section</th>
+                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start {{ $sortColumn == 'id' ? 'border-b-2 border-indigo-300' : '' }}">
+                                        <x-sortable column="id" :$sortColumn :$sortDirection>
+                                            ID
+                                        </x-sortable>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start {{ $sortColumn == 'name' ? 'border-b-2 border-indigo-300' : '' }}">
+                                        <x-sortable column="name" :$sortColumn :$sortDirection>
+                                            Name
+                                        </x-sortable>
+                                        </th>
+                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start {{ $sortColumn == 'email' ? 'border-b-2 border-indigo-300' : '' }}">
+                                        <x-sortable column="email" :$sortColumn :$sortDirection>
+                                            Email
+                                        </x-sortable>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start {{ $sortColumn == 'class_id' ? 'border-b-2 border-indigo-300' : '' }}">
+                                        <x-sortable column="class_id" :$sortColumn :$sortDirection>
+                                            Class
+                                        </x-sortable>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-sm font-medium uppercase text-start {{ $sortColumn == 'section_id' ? 'border-b-2 border-indigo-300' : '' }}">
+                                        <x-sortable column="section_id" :$sortColumn :$sortDirection>
+                                            Section
+                                        </x-sortable>
+                                    </th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -66,7 +87,8 @@
             </div>
 
             {{-- Spinner --}}
-            <x-spinner wire:loading />
+            {{-- <x-spinner wire:loading /> --}}
             {{-- End Spinner --}}
         </div>
     </div>
+
